@@ -1,0 +1,25 @@
+{
+    "id": "2",
+    "title": "efe",
+    "info": "fedzd",
+    "nbtry": "0",
+    "nbsuccess": "0",
+    "seuil": "40",
+    "creation": "\"2020-08-05T12:52:05.906Z\"",
+    "lastmodif": "\"2020-08-05T12:52:05.906Z\"",
+    "subject": "e",
+    "lastsend": "\"2020-08-05T12:52:05.906Z\"",
+    "nextsend": "\"2020-08-05T12:52:05.906Z\"",
+    "questions": [
+        {
+            "question": "fe",
+            "help": "ef",
+            "answers": [
+                {
+                    "choice": "ef",
+                    "isgood": "true"
+                }
+            ]
+        }
+    ]
+}

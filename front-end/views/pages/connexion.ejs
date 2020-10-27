@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="/stylesheets/quizz/connexion.css" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/style.css" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/quizz/header.css" rel="stylesheet" type="text/css">
+    <title>Quizee</title>
+</head>
+
+<body class="transparent">
+    <% include ../partials/header %>
+    <section class="center">
+        <section class="center largeur infos_globale">
+            <form method="POST" action="/users/login" class=" largeur">
+                <div class="titre">
+                    <p>Connexion</p>
+                </div>
+                <div class="espace2">
+                    <input type="text" id="username" name="username" placeholder="Username" style="border: hidden">
+                </div>
+                <div>
+                    <input type="password" id="password" name="password" placeholder="Mot de passe"
+                        style="border: hidden">
+                </div>
+                <div class="utilitaire">
+                    <a href="/users/reinitialisemdp1" class="espace"> Mot de passe oublie</a>
+                </div>
+                <div class="utilitaire">
+                    <a href="/users/formulaire"> Premiere connexion </a>
+                </div>
+                <button class="block_bleu_foncer largeur1" type="submit">
+                    se connecter
+                </button>
+                <% if(somethingNotValid) { %>
+                <p class="error"> erreur champ(s) invalide(s) </p>
+                <% } %>
+                <div class="espace1">
+                    <input type="checkbox" />
+                    <label>Se souvenir de moi</label>
+                </div>
+            </form>
+        </section>
+    </section>
+</body>
+
+</html>

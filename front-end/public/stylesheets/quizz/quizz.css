@@ -1,0 +1,61 @@
+.haut
+{
+    display: flex;
+    flex-direction: column;
+    
+}
+.size
+{
+    height: 80%;
+    width: 80%;
+}
+.scroll
+{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height : 370px;
+}
+
+.left
+{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.flex
+{
+    display: flex;
+    justify-content: space-around;
+}
+
+.blockbleufoncer
+{
+    height: 48px;
+    background-color: #0ad7ff;
+    border-radius: 10px;
+    margin-top: 9px;
+    color: white;
+    font-family: 'Acumin Variable Concept';
+    font-size: 1.1em;
+    display: table; 
+    min-width: 96px;
+    margin-right: 37px;
+}
+
+.centrertext
+{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.boutton_valid
+{
+    align-self: flex-start;
+}
+
+
+
+    
+
+

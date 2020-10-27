@@ -1,0 +1,71 @@
+
+
+
+
+article
+{
+    width: 100%;
+    height: auto;
+    background-color: green;
+}
+
+
+
+button
+{ 
+    display: block;
+}
+
+.liste-quizz
+{
+    flex: 1;
+}
+.size
+{
+    height: 80%;
+    width: 80%;
+}
+.list-quizz 
+{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height : 370px;
+}
+
+.barre-du-haut
+{
+    width:100%;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 47px;
+}
+.largeur
+{
+    width: 10%;
+}
+.shorttext 
+ {
+    font-size: 1.5em;
+ }
+ .longtext 
+ {
+    font-size: 1em;
+ }
+ .mediumtext 
+ {
+    font-size: 1.1em;
+ }
+ .hidden1
+ {
+    width: 18%;
+    background-color: white;
+    margin-right: 24.15px;
+ }
+
+ .hidden2
+ {
+    width: 8%;
+    background-color: white;
+    margin-right: 24.15px;
+ }
+

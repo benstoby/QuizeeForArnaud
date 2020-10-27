@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="/stylesheets/quizz/contact.css" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/quizz/index.css" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/style.css" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/quizz/header.css" rel="stylesheet" type="text/css">
+    <title>Quizee</title>
+</head>
+
+<body class= "transparent">
+    <% include ../partials/header %>
+    <section class="center flex">
+        <form method="POST" action="/contact" class="center flex transparent">
+            <% if(isEmailNotValid) { %>
+            <p class="error">erreur email invalide</p>
+            <% } %>
+            <div class="Q petitchamptext">
+                <input type="text" name="from" style="overflow:hidden" placeholder="E-mail"></input>
+            </div>
+            <div class="Q petitchamptext">
+                <input type="text" name="subject" style="overflow:hidden" placeholder="Suject"></textarea>
+            </div>
+            <div class="Q grandchamptext">
+                <textarea name="text" style="overflow:hidden" placeholder="Votre message ..."></textarea>
+            </div>
+            <section class="align">
+                <button type="submit" class="bouton"> envoyer </button>
+            </section>
+        </form>
+    </section>
+        
+</body>

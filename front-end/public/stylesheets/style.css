@@ -1,0 +1,93 @@
+@import url(//db.onlinewebfonts.com/c/066ce24dae3730ed6c648b09efaea93a?family=Acumin+Variable+Concept);
+html
+{
+    background:linear-gradient(23deg, #0ad7ff, #00ffff);
+    height: 100%;
+    width: 100%;
+}
+
+body 
+{
+    background-color: white;
+    border-radius: 100px;
+}
+
+.center 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.block_bleu_foncer
+{
+    height: 35px;
+    background-color: #0ad7ff;
+    border-radius: 10px;
+    margin-top: 9px;
+    color: white;
+    font-family: 'Acumin Variable Concept';
+    font-size: 1.1em;
+    display: table; 
+    min-width: 96px;
+}
+.block_bleu_foncer p
+{
+    display: table-cell; 
+    vertical-align: middle;
+    text-align: center;
+}
+
+.block_bleu_clair
+{
+    width: 10%;
+    height: 51px;
+    background-color: #e5f7f9;
+    border-radius: 18px;
+    margin-top: 9px;
+    color: white;
+    font-family: 'Acumin Variable Concept';
+    font-size: 1.1em;
+    display: table; 
+    min-width: 96px;         
+}   
+
+.block_bleu_clair p
+{
+    display: table-cell; 
+    vertical-align: middle;
+    text-align: center;
+    color: black;
+}
+.sizebodybig
+{
+    height: 90%;
+    width: 93%;
+}
+.notdisplay
+{
+    display: none;
+}
+
+.Q textarea,.Q input
+{
+    width: 100%;
+    border: none;
+    background-color: white;
+    color: black;
+    border-radius: 18px;
+    resize: none;
+}
+
+.transparent 
+{
+    background-color: transparent !important;
+}
+
+.error {
+    color: red;
+}
+
+.flex {
+    flex-direction: column;
+}

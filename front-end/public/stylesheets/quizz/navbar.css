@@ -1,0 +1,74 @@
+.navbar
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    background:linear-gradient(23deg, #0ad7ff, #00ffff);
+    min-height: 100%;
+    min-width: 13%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border-radius: 40px;
+    width: 13%;
+} 
+
+.navbutton
+{
+    width: 72px;
+    height: 72px;
+    background-color: transparent;
+    border-radius: 50%;
+    border:0;
+    cursor: pointer;
+}
+
+#dashboard_white
+{
+    background-image: url(/images/icones/navbar/dashboard_white.svg);
+    background-color: transparent;
+}
+#dashboard_blue
+{
+    background-image: url(/images/icones/navbar/dashboard_blue.svg);
+    background-color: white;
+}
+
+#ajouter_white
+{
+    background-image: url(/images/icones/navbar/nouveau_white.svg);
+    background-color: transparent;
+}
+
+#ajouter_blue
+{
+    background-image: url(/images/icones/navbar/nouveau_blue.svg);
+    background-color: white;
+}
+
+#profil_white
+{
+    background-image: url(/images/icones/navbar/profil_white.svg);
+    background-color: transparent;
+}
+#profil_blue
+{
+    background-image: url(/images/icones/navbar/profil_blue.svg);
+    background-color: white;
+}
+#info_white
+{
+    background-image: url(/images/icones/navbar/informations_white.svg);
+    background-color: transparent;
+}
+#info_blue
+{
+    background-image: url(/images/icones/navbar/informations_blue.svg);
+    background-color: white;
+}
+
+.logosize
+{
+    width: 80%;
+}
+

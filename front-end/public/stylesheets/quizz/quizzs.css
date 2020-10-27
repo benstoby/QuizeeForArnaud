@@ -1,0 +1,36 @@
+.ligne-quizz
+{
+    width:100%;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 32px;  
+} 
+
+.hidden
+{
+   width: 18%;
+   background-color: white;
+   display: flex;
+   justify-content: space-around;
+}
+
+
+.hidden img
+{
+    width: 35px;
+    height: 51px;
+    margin-left: 15px;
+    display: flex;
+}
+#pourcent:hover{
+    cursor: default;
+}
+
+#pourcent:hover + #infostat{
+    cursor: default;
+    display: block;
+}
+
+.taillepolice{
+    font-size: 1.4em;
+}

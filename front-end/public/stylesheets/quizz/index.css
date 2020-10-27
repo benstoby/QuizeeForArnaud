@@ -1,0 +1,33 @@
+body 
+{
+    border-radius: 100px;
+}
+
+.bouton
+{
+    
+    background-color:  white;
+    border-radius: 35px;
+    color: #0ad7ff;
+    font-family: 'Acumin Variable Concept';
+    font-size: 3.1em;
+    display: flex; 
+    text-decoration: none;
+    
+    
+}
+
+.background_img
+{
+    width: 90%;
+}
+.align
+{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+

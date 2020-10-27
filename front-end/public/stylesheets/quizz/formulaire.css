@@ -1,0 +1,58 @@
+input
+{
+    font-size: 2.1em;
+    padding-top: 32px;
+    color: #b3b3b3;
+    text-align: center;
+}
+
+.bodysize
+{
+    width: 55%;
+    height: 90%;
+}
+
+.infos_globale
+{
+    text-align: center;
+}
+
+label
+{
+    text-decoration: underline;
+    color: #b3b3b3;
+}
+
+.column
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.formsize
+{
+    height: 100%;
+}
+
+.size
+{
+    height: 70px !important;
+    width: 45%;
+    font-size: 2.5em !important;
+    border-radius: 25px !important;
+}
+
+.textformulaire
+{
+    display: flex;
+}
+
+.spacearound
+{
+    justify-content: space-around;
+}
+
+.hide
+{
+    display: none;
+}

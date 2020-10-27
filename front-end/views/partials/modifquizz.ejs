@@ -1,0 +1,78 @@
+<section class="center size">
+    <%- include('../partials/navbar', {page: "ajouter"}); %>
+
+    <!-- la section est une partial  -->
+    <form action="/quizz/ajouter" method="post">
+        <section class="infos_globale">
+            <article class="ligne_info">
+                <div class="block_bleu_foncer largeur">
+                    <p>Titre</p>
+                </div>
+                <input type="text" name="titre" value="<%= (typeof quizz !== 'undefined')?quizz.title:""; %>">
+            </article>
+            <article class="ligne_info">
+                <div class="block_bleu_foncer largeur">
+                    <p>Sujet</p>
+                </div>
+                <input type="text" name="sujet" value="<%= (typeof quizz !== 'undefined')?quizz.subject:""; %>">
+
+                <div class="block_bleu_foncer largeur">
+                    <p>Seuil de réussite</p>
+                </div>
+                <input type="number" id="seuildereussite" name="seuildereussite" min="0" max="100" value="<%= (typeof quizz !== 'undefined')?quizz.seuil:""; %>">
+
+            </article>
+            <article class="ligne_info">
+                <div class="block_bleu_foncer largeur">
+                    <p>Infos</p>
+                </div>
+                <input type="text" name="info" value="<%= (typeof quizz !== 'undefined')?quizz.info:""; %>">
+            </article>
+            <section class="to_the_left">
+                <section class="quizz">
+                    <article class="ligne_info">
+                        <div class="hidden"></div>
+                        <div class="block_bleu_foncer largeur1">
+                            <p>Question</p>
+                        </div>
+                        <div class="block_bleu_foncer largeur1">
+                            <p>Reponses</p>
+                        </div>
+                        <div class="block_bleu_foncer largeur1">
+                            <p>Aide</p>
+                        </div>
+                    </article>
+                    <article id="container" class="question1">
+                       
+
+                    </article>
+                    <% if(somethingNotValid) { %>
+                        <p class= "error"> erreur champ(s) invalide(s) </p>
+                    <% } %>
+                    <article class="ajouter">
+                        <div onclick="handleadd()" class="block_bleu_foncer petit_bloc">
+                            <img src="/images/icones/ajouter.svg" alt="ajouter" />
+                        </div>
+                        <div onclick="handleremove()" class="block_bleu_foncer petit_bloc">
+                            <img src="/images/icones/moins.svg" alt="ajouter" />
+                        </div>
+                    </article>
+                </section>
+                <section class="pyctogramme">
+                    <div class="pycto">
+                        <input type="submit"  alt="modifier" id="save-icon" name="submit" value="1" >
+                    </div>
+                    <div class="pycto">
+                        <img src="/images/icones/visualiser.svg" alt="visualiser" />
+                    </div>
+                    <div class="pycto">
+                        <img src="/images/icones/jeter.svg" alt="dupliquer" />
+                    </div>
+                    <div class="pycto">
+                        <input type="submit" alt="modifier" id="send-icon" name="submit" value="2" />
+                    </div>
+                </section>
+            </section>
+        </section>
+    </form>
+</section>

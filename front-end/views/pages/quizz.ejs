@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html class="center">
+
+<head>
+    <link href="/stylesheets/style.css" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/quizz/quizz.css" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/nav.css" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/quizz/correction.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="/javascripts/checkedColor.js"></script>
+    <script type="text/javascript" src="/javascripts/initcheckbox.js"></script>
+    <title>Quizee</title>
+</head>
+
+<body class="center column sizebodybig">
+    <form class="center size" method="POST" action="/doquizz/correction">
+        <input type="text" name="user" value="<%= user %>" style="display: none">
+        <input type="text" name="nbquizz" value="<%= nbquizz %>" style="display: none">
+
+        <article class="size column scroll">
+            <% var cpt = 0; %>
+
+            <% quizz.questions.forEach(function(question) { %>
+            <% cpt++; %>
+            <div class="left">
+                <div class="hidden_div_question"></div>
+                <div class="blockbleufoncer">
+                    <p class="centrertext"> Q<%= cpt %> </p>
+                </div>
+                <div class="block_bleu_clair question_large">
+                    <p><%=question.question%></p>
+                </div>
+            </div>
+            <% var cptans = 0; %>
+            <% question.answers.forEach(function(answers) { %>
+            <% cptans ++; %>
+            <div class="left">
+                <div class="hidden_div_reponse"></div>
+                <label class="block_bleu_clair reponse_large" for="R<%= cpt %>_<%= cptans %>">
+                    <p><%=answers.choice%></p>
+                    <input class="notdisplay" id="R<%= cpt %>_<%= cptans %>" name="R<%= cpt %>_<%= cptans %>"
+                        type="checkbox" onchange="checkedHandler(this)" />
+                </label>
+            </div>
+            <%  }); %>
+            <%  }); %>
+
+        </article>
+        <form action="/doquizz/correction" method="get">
+            <div class="boutton_quit">
+                <input class="block_bleu_foncer" type="submit" value="valider" />
+            </div>
+        </form>
+    </form>
+
+</body>

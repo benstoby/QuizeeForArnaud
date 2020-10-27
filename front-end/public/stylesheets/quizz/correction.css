@@ -1,0 +1,65 @@
+    
+.block{
+    width: 10%;
+    height: 51px;
+    border-radius: 18px;
+    margin-top: 9px;
+    font-family: 'Acumin Variable Concept';
+    font-size: 1.1em;
+    display: table; 
+    min-width: 96px; 
+    text-align: center;        
+}   
+
+.question_large {
+    min-width: 76%;
+}
+
+.reponse_large {
+    min-width: 40%;
+}
+
+.colorblockred{
+    color: white;
+    background-color: #ff6464 ;
+    
+}
+
+.colorblockgreen
+{
+    background-color: #9fffa8 ;
+}
+
+.pastille_verte
+{
+    width: 25px;
+    height: 25px;
+    border-radius: 20px;
+    background: #9fffa8;
+    position: relative;
+    top: 22px;
+    left : 10px;
+}
+
+.hidden_div_question
+{
+    width: 112px;
+    background-color: white;
+}
+
+.hidden_div_reponse
+{
+    width: 245px;
+    background-color: white;
+}
+
+.column
+{
+    display: flex;
+    flex-direction: column;
+}
+.boutton_quit 
+{
+    align-self:flex-end;
+    margin-right: 13%;
+}

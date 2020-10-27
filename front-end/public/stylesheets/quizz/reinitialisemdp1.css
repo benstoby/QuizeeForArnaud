@@ -1,0 +1,51 @@
+.infos_globale
+{
+    display: flex;
+    flex-direction: column;
+    /*justify-content: center;*/
+    /*padding-left: 328%;*/
+    text-align: center;
+    width: 46%;
+}
+
+.titre
+{
+    font-size: 50px;
+    font-weight: bold;
+    white-space: nowrap;
+    margin-left: -20%;
+}
+
+.forme
+{
+    font-size: 30px;
+    color: #b3b3b3;
+}
+
+.largeur
+{
+    border-radius: 50px !important;
+    width: 65%;
+}
+
+input
+{
+    font-size: 2.1em;
+    padding-top: 32px;
+    text-align: center;
+    color: #b3b3b3;
+}
+
+.largeur1
+{
+    height: 86px !important;
+    width: 60%;
+    font-size: 3.5em !important;
+    border-radius: 40px !important;
+}
+
+.inline
+{
+    display: flex;
+    padding-top: 60px;
+}

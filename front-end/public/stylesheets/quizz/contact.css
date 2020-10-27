@@ -1,0 +1,23 @@
+
+.petitchamptext
+{
+    display: flex;
+    justify-content: space-between;
+    width: 200%;
+    margin-top: 10px;
+    height: 55px;
+}
+
+.grandchamptext
+{
+    display: flex;
+    justify-content: space-between;
+    width: 200%;
+    margin-top: 10px;
+    height: 260px;
+}
+
+textarea, input
+{
+    padding-left: 35px;
+}

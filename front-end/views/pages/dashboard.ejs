@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html class="center">
+
+<head>
+  <link href="/stylesheets/quizz/dashboard.css" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/style.css" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/quizz/quizzs.css" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/quizz/navbar.css" rel="stylesheet" type="text/css">
+  <title>Quizee</title>
+</head>
+
+<body class="center sizebodybig">
+  <section class="center size">
+ 
+    <%- include('../partials/navbar', {page: "dashboard"}); %>
+    <section class="liste-quizz">
+      <header class="barre-du-haut">
+        <div class="hidden2"></div>
+        <div class="block_bleu_foncer largeur">
+          <p>Titre</p>
+        </div>
+        <div class="block_bleu_foncer largeur">
+          <p>Creation</p>
+        </div>
+        <div class="block_bleu_foncer largeur">
+          <p>Derniere modification</p>
+        </div>
+        <div class="block_bleu_foncer largeur">
+          <p>Sujet</p>
+        </div>
+        <div class="block_bleu_foncer largeur">
+          <p>Dernier envoi</p>
+        </div>
+        <div class="block_bleu_foncer largeur">
+          <p>Prochain envoi</p>
+        </div>
+        <div class="hidden1"></div>
+      </header>
+      <!-- ici ce sera une partial -->
+      <section class="list-quizz">
+        <% include ../partials/quizzs %>
+      </section>
+
+    </section>
+  </section>
+</body>
+
+</html>

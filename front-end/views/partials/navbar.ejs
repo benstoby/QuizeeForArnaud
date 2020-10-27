@@ -1,0 +1,42 @@
+<nav class="navbar">
+    <img class="logosize" src="/images/logo.PNG" alt="logo" />
+    <% switch (page) {
+        case 'dashboard' : %>
+            <a href="/quizz/dashboard">
+                <button class="navbutton" id="dashboard_blue"> </button>
+            </a>
+            <a href="/quizz/ajouter">
+                <button class="navbutton" id="ajouter_white"> </button>
+            </a>
+            <a href="/users/logout">
+                <button class="navbutton" id="profil_white"> </button>
+            </a>
+        <% break;
+        
+        case 'ajouter' : %>
+            <a href="/quizz/dashboard">
+                <button class="navbutton" id="dashboard_white"> </button>
+            </a>
+            <a href="/quizz/ajouter">
+                <button class="navbutton" id="ajouter_blue"> </button>
+            </a>
+            <a href="/users/logout">
+                <button class="navbutton" id="profil_white"> </button>
+            </a>
+        <% break;
+    
+        case 'logout' : %>
+            <a href="/quizz/dashboard">
+                <button class="navbutton" id="dashboard_white"> </button>
+            </a>
+            <a href="/quizz/ajouter">
+                <button class="navbutton" id="ajouter_white"> </button>
+            </a>
+            <a href="/users/logout">
+                <button class="navbutton" id="profil_blue"> </button>
+            </a>
+        <% break;
+    } %>
+    <button class="navbutton" id="info_white"> </button>
+
+</nav>

@@ -1,0 +1,57 @@
+
+
+.center 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo
+{
+    width : 150px; 
+    height : 150px;
+    border: none;
+    -moz-border-radius : 75px;
+    -webkit-border-radius : 75px;
+    border-radius : 75px;
+    background-color: brown;
+  }
+
+  .flexequipe
+  {
+    display: flex;
+    margin-top: 20%;
+  }
+
+  textarea
+  {
+    float: right;
+    width: 120%;
+    border: none;
+    background-color: white;
+    color: black;
+    border-radius: 18px;
+    resize: none;
+    height: 160px;
+    margin-right: -30%;
+  }
+
+  .bodysize
+{
+    width: 55%;
+    height: 90%;
+}
+
+.textformulaire
+{
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.column
+{
+    display: flex;
+    flex-direction: column;
+}

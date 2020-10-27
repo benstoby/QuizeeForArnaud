@@ -1,0 +1,58 @@
+<% quizzs.forEach(function(quizz) { %>
+<div class="ligne-quizz">
+    <% //var nbtry = 50 %> 
+    <% //var nbsuccess = 20 %> 
+    <%= //360*nbsuccess/100 %> 
+    <div >
+        <% if(quizz.nbtry > 0) { %>
+            <p id="pourcent" ><%=  quizz.nbsuccess / quizz.nbtry * 100  %> % de reussite</p>
+            <p id="infostat" class="notdisplay"> quizz fait <%= quizz.nbtry %> fois et réussi <%= quizz.nbsuccess %>  </p>
+        <% } else { %>
+            <p class="taillepolice"> jamais fait</p>
+        <% } %>
+    </div>
+
+
+
+    <div class="block_bleu_clair">
+        <p><%=quizz.titre%> </p>
+    </div>
+    <div class="block_bleu_clair">
+        <p><%displayDate(quizz.creation)%> </p>
+    </div>
+    <div class="block_bleu_clair">
+        <p><%displayDate(quizz.derniere_modification)%> </p>
+    </div>
+    <div class="block_bleu_clair">
+        <p><%=quizz.sujet%> </p>
+    </div>
+    <div class="block_bleu_clair">
+        <p><%displayDate(quizz.dernier_envoi)%> </p>
+    </div>
+    <div class="block_bleu_clair">
+        <p><%displayDate(quizz.prochain_envoi)%> </p>
+    </div>
+    <div class="hidden">
+        <a href="/quizz/modifier?user=<%= username %>&quizz=<%= quizz.id %>">
+            <img src="/images/icones/modifier.svg" alt="modifier" />
+        </a>
+        <a href="/doquizz?user=<%= username %>&quizz=<%= quizz.id %>">
+            <img src="/images/icones/visualiser.svg" alt="visualiser" />
+        </a>
+        <form id="duplicate" action="/quizz/dupliquer" method="POST">
+            <input class="notdisplay" name="id" value="<%= quizz.id %>">
+            <a href="javascript:{}" onclick="document.getElementById('duplicate').submit(); return false;">
+                <img src="/images/icones/dupliquer.svg" alt="dupliquer" />
+            </a>
+        </form>
+
+        <a href="/quizz/supprimer?user=<%= username %>&quizz=<%= quizz.id %>">
+            <img src="/images/icones/jeter.svg" alt="jeter" />
+        </a>
+    </div>
+</div>
+<% }); %>
+
+<% function displayDate(date){ %>
+<%= date.getDate() %>/<%= date.getMonth() %>/<%= date.getFullYear() %>
+<% } %>

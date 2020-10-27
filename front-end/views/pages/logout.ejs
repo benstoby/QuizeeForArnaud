@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html class="center">
+
+<head>
+    <link href="/stylesheets/quizz/formulaire.css" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/style.css" rel="stylesheet" type="text/css">
+    <title>Quizee</title>
+</head>
+<body class="center bodysize">
+    <section class="column spacearound formsize">
+        <section class="textformulaire">
+            <article class="infos_globale column">
+                <div>
+                    <input type="text" id="username" name="username" placeholder="Username" style="border: hidden" value="<%= username %>">
+                </div>
+                <div>
+                    <input type="text" id="lastname" name="lastname" placeholder="Nom" style="border: hidden" value="<%= user.lastname %>">
+                </div>
+                <div>
+                    <input type="text" id="firstname" name="firstname" placeholder="Prenom" style="border: hidden" value="<%= user.firstname %>">
+                </div>
+                <div>
+                    <input type="email" id="email" name="email" placeholder="email" style="border: hidden" value="<%= user.email %>">
+                </div>
+            </article>
+            <article class="infos_globale column">
+                <div>
+                    <input type="text" id="socity" name="socity" placeholder="Societe" style="border: hidden" value="<%= user.socity %>">
+                </div>
+                <div>
+                    <input type="text" id="function" name="function" placeholder="Fonction" style="border: hidden" value="<%= user.function %>">
+                </div>
+                <div>
+                    <input type="text" id="country" name="country" placeholder="Pays" style="border: hidden" value="<%= user.country %>">
+                </div>
+            </article>
+        </section>
+        <form method="POST" action="/users/logout" class="center">
+            <button class="block_bleu_foncer size" type="submit">
+                Deconnexion
+            </button>
+        </form>
+    </section>
+</body>

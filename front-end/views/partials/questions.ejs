@@ -1,0 +1,121 @@
+<script>
+    var nbQuestion = 0;
+
+    function handleremoveTest()
+    {
+        if(nbQuestion > 1)
+        {
+            nbQuestion--;
+            var container = document.getElementById("container");
+            container.removeChild(container.lastChild);
+        }
+    }
+
+    function handleaddTEST() {
+        nbQuestion++;
+        const nbReponse = 1;
+        var container = document.getElementById("container");
+
+        var stringhtml = '<div id="question" class="question"> \
+                                    <div class="block_bleu_foncer petit_bloc "> \
+                                        <p>Q' + nbQuestion + '</p> \
+                                    </div> \
+                                    <div class="Q largeur1"> \
+                                        <textarea name="Q' + nbQuestion +'" oninput="textAreaAdjust(this)" style="overflow:hidden"></textarea> \
+                                    </div> \
+                                    <div id="reponse'+ nbQuestion + '" class="largeur1"> \
+                                        <div class="Q reponse rep"> \
+                                            <textarea name="R' + nbQuestion + '_' + nbReponse +'" oninput="textAreaAdjust(this)" style="overflow:hidden"></textarea> \
+                                            <input type="checkbox" id="bonne_reponse" name="isgood' + nbQuestion + '_' + nbReponse + '"> \
+                                            <label for="bonne_reponse">Bonne Reponse</label> \
+                                        </div> \
+                                        <div id="' + nbQuestion + '" onclick="handleaddR(this)" class="block_bleu_foncer1 taille boutton_plus_reponse"> \
+                                            <img src="/images/icones/ajouter.svg" alt="ajouter"/>  \
+                                        </div> \
+                                        <div id="S' + nbQuestion + '" onclick="handleremoveR(this)" class="block_bleu_foncer1 taille boutton_plus_reponse"> \
+                                            <img src="/images/icones/moins.svg" alt="supprimer" /> \
+                                        </div> \
+                                    </div> \
+                                    <div class="largeur1"> \
+                                        <div class="Q reponse"> \
+                                            <textarea name="Aide'+ nbQuestion +'" oninput="textAreaAdjust(this)" style="overflow:hidden"></textarea> \
+                                        </div> \
+                                    </div> \
+                                </div>';
+
+        var newQuestion = document.createElement('div');
+        newQuestion.innerHTML = stringhtml;
+        container.appendChild(newQuestion.firstChild);
+
+    }
+
+    function handleremoveR(element) {
+        
+        var container = element.parentNode;
+        var listReponse = container.getElementsByClassName("rep");
+        var lastRep = listReponse[listReponse.length -1];
+        
+        if(listReponse.length > 1)
+        {
+            container.removeChild(lastRep);
+        }
+    }
+
+
+    function handleaddR(element) {
+        var reponse = document.getElementById("reponse" + element.id);
+        var addButton = document.getElementById(element.id);
+        var idQuestion = element.id;
+        var container = element.parentNode;
+        var listReponse = container.getElementsByClassName("rep");
+        var lastRep = listReponse[listReponse.length -1];
+        lastRep = lastRep.getElementsByTagName("TEXTAREA")[0];
+        
+        var nbReponse = lastRep.name.split("_")[1];
+        nbReponse++;
+        console.log(nbReponse);
+        
+        var stringhtml = '  <div class="Q rep"> \
+                                <textarea name="R' + idQuestion + '_' + nbReponse + '" oninput="textAreaAdjust(this)" style="overflow:hidden"></textarea> \
+                                <input type="checkbox" id="bonne_reponse" name="isgood'+ idQuestion + '_' + nbReponse + '"> \
+                                <label for="bonne_reponse">Bonne Reponse</label> \
+                            </div>';
+        var newReponse = document.createElement('div');
+        newReponse.innerHTML = stringhtml;
+        reponse.insertBefore(newReponse.lastChild, addButton);
+
+    }
+
+    function textAreaAdjust(o) {
+        o.style.height = "1px";
+        o.style.height = (25 + o.scrollHeight) + "px";
+        console.log(o.scrollHeight);
+    }
+
+</script>
+<!-- <div id="question" class="question">
+    <div class="block_bleu_foncer petit_bloc ">
+        <p>Q1</p>
+    </div>
+    <div class="Q largeur1">
+        <textarea name="Q1" autofocus="true"  oninput="textAreaAdjust(this)" style="overflow:hidden" scrollHeight="5"></textarea>
+    </div>
+    <div id="reponse1" class="largeur1">
+        <div class="Q reponse rep">
+            <textarea name="R1_1" oninput="textAreaAdjust(this)"  style="overflow:hidden"></textarea>
+            <input type="checkbox" id="bonne_reponse" name="isgood1_1">
+            <label for="bonne_reponse">Bonne Reponse</label>
+        </div>
+        <div id="1" onclick="handleaddR(this)" class="block_bleu_foncer1 taille boutton_plus_reponse">
+            <img src="/images/icones/ajouter.svg" alt="ajouter" />
+        </div>
+        <div id="S1" onclick="handleremoveR(this)" class="block_bleu_foncer1 taille boutton_plus_reponse">
+            <img src="/images/icones/moins.svg" alt="supprimer" />
+        </div>
+    </div>
+    <div class="largeur1"> 
+        <div class="Q reponse "> 
+            <textarea name= "Aide1" oninput="textAreaAdjust(this)" style="overflow:hidden"></textarea> 
+        </div> 
+    </div> 
+</div> -->

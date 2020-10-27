@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html class="center">
+
+<head>
+  <link href="/stylesheets/style.css" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/quizz/quizz.css" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/quizz/correction.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="/javascripts/initcheckbox.js"></script>
+  <!-- <script type="text/javascript" src="/javascripts/answersColor.js"></script> -->
+  <title>Quizee</title>
+</head>
+
+<body class="center column sizebodybig">
+    <article class="size column scroll">
+        <% var cpt = 0; %> 
+        
+        <% quizz.questions.forEach(function(question) { %>
+            <% cpt++; %> 
+            <div class="left">
+                <div class="hidden_div_question"></div>
+                <div class="blockbleufoncer" >
+                    <p class="centrertext"> Q<%= cpt %>  </p>
+                </div>
+                <div class="block_bleu_clair question_large">
+                    <p><%=question.question%></p>
+                </div>
+            </div>
+            <% var cptans = 0; %>
+            <% question.answers.forEach(function(answers) { %>
+                <% cptans ++; %>
+                <div class="left">
+                    <div class="hidden_div_reponse"></div>
+                    <% if(! (userAnswers["R"+ cpt +"_"+ cptans]) && answers.isgood == "false") { %> 
+                        <label class="block_bleu_clair reponse_large" for="R<%= cpt %>_<%= cptans %>">
+                            <p><%=answers.choice%></p>
+                            <input class="notdisplay" id="R<%= cpt %>_<%= cptans %>" name="R<%= cpt %>_<%= cptans %>" type="checkbox"/>
+                        </label> 
+                    <% } %> 
+                    <% if (userAnswers["R"+ cpt +"_"+ cptans] && answers.isgood == "false") { %>
+                        <label class="block reponse_large colorblockred" for="R<%= cpt %>_<%= cptans %>">
+                            <p><%=answers.choice%></p>
+                            <input class="notdisplay" id="R<%= cpt %>_<%= cptans %>" name="R<%= cpt %>_<%= cptans %>" type="checkbox"/>
+                        </label> 
+                    <% } %> 
+                    <% if (userAnswers["R"+ cpt +"_"+ cptans] && answers.isgood == "true") { %> 
+                        <label class="block reponse_large colorblockgreen" for="R<%= cpt %>_<%= cptans %>">
+                            <p><%=answers.choice%></p>
+                            <input class="notdisplay" id="R<%= cpt %>_<%= cptans %>" name="R<%= cpt %>_<%= cptans %>" type="checkbox"/>
+                        </label> 
+                    <% } %> 
+                    <% if (! (userAnswers["R"+ cpt +"_"+ cptans]) && answers.isgood == "true") { %> 
+                        <label class="block_bleu_clair reponse_large" for="R<%= cpt %>_<%= cptans %>">
+                            <p><%=answers.choice%></p>
+                            <input class="notdisplay" id="R<%= cpt %>_<%= cptans %>" name="R<%= cpt %>_<%= cptans %>" type="checkbox"/>
+                        </label> 
+                        <div class="pastille_verte"></div>
+                    <% } %> 
+                </div>
+            <%  }); %>
+        <%  }); %>
+    </article>
+    <form class="boutton_quit" action="/quizz/dashboard" method="get">
+        <input class="block_bleu_foncer" type="submit" value="quitter" />
+    </form>
+    
+</body>
