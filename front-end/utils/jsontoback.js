@@ -11,11 +11,12 @@ var jsontoback = function (req) {
         !secucheck.verifchamp(req.body.sujet) ||
         !secucheck.verifchamp(req.body.info) || 
         !(req.body.seuildereussite <= 100 && req.body.seuildereussite >= 0)) 
-
     {
         verif = false;
     }
     else {
+        
+        ret.quizz.id = req.body.id;
         ret.quizz.username = req.session.user;
         ret.quizz.title = req.body.titre;
         ret.quizz.subject = req.body.sujet;

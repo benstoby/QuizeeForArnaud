@@ -2,12 +2,17 @@
     <%- include('../partials/navbar', {page: "ajouter"}); %>
 
     <!-- la section est une partial  -->
-    <form action="/quizz/ajouter" method="post">
+    <% if(where == 'ajouterquizz') { %>
+        <form action="/quizz/ajouter" method="post">
+    <% } else {%>
+        <form action="/quizz/modifier" method="post">
+    <% } %>
         <section class="infos_globale">
             <article class="ligne_info">
                 <div class="block_bleu_foncer largeur">
                     <p>Titre</p>
                 </div>
+                <input style="display: none;" type="text" name="id" value="<%= (typeof quizz !== 'undefined')?quizz.id:""; %>">
                 <input type="text" name="titre" value="<%= (typeof quizz !== 'undefined')?quizz.title:""; %>">
             </article>
             <article class="ligne_info">

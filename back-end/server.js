@@ -72,6 +72,11 @@ app.use(bodyParser.json())
         var quizz = req.body.quizz;
         setQuizzUtils.setQuizz(quizz, client, res);
     })
+    .put('/quizz', urlencodedParser, function (req, res) {
+        var quizz = req.body.quizz;
+        var key = quizz.username + "_" + "Quizz" + quizz.id;
+        setQuizzUtils.saveQuizz(key, quizz.id, quizz, client, res);
+    })
 
     .post('/quizzincrement', urlencodedParser, function (req, res) {
         var key = req.body.username + '_Quizz' + req.body.quizz;

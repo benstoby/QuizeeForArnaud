@@ -11,8 +11,7 @@
     </head>
 
     <body class="center sizebodybig">
-
-        <%- include('../partials/modifquizz'); %>
+        <%- include('../partials/modifquizz', {where: "modifquizz"}); %>
         <script id="myJson">
             var quizz = '<%-JSON.stringify(quizz) %>';
             quizz = quizz.replace(/\\/g,'');

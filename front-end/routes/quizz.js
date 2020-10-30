@@ -72,9 +72,6 @@ router.get('/supprimer', function (req, res, next) {
             });
 
     }
-
-
-
 });
 
 router.get('/ajouter', function (req, res, next) {
@@ -90,6 +87,33 @@ router.post('/ajouter', function (req, res) {
     if (json != null) {
 
         sa.post('localhost:8080/quizz')
+        .set('accept', 'json')
+        .send(json)
+        .end(function (err, response) {
+            if (!err) {
+                if (req.body.submit == 1) {
+
+                    res.redirect('/quizz/dashboard');
+                }
+                else if (req.body.submit == 2) {
+                    res.redirect('/quizz/quizeelink?quizz=' + response.text);
+                }
+            }
+            else {
+                res.render('pages/ajouter', { somethingNotValid: true });
+            }
+        });
+    }
+    else {
+        res.render('pages/ajouter', { somethingNotValid: true });
+    }
+});
+
+router.post('/modifier', function (req, res) {
+    var json = utilsjsonback.jsontoback(req);
+    if (json != null) {
+
+        sa.put('localhost:8080/quizz')
         .set('accept', 'json')
         .send(json)
         .end(function (err, response) {
@@ -141,6 +165,5 @@ router.post('/dupliquer', function (req, res, next) {
         }
     });
 });
-
 
 module.exports = router;
