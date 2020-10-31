@@ -4,6 +4,18 @@ var clientG;
 var quizzG;
 var resG;
 
+function saveQuizz(key, id, quizz, client, res){
+    client.hmset(key,'id',id ,'nbsuccess', 0, 'nbtry', 0, 'title', quizz.title, 'info', quizz.info, 'seuil', quizz.seuil, 'creation', quizz.creation, 'lastmodif', quizz.lastmodif, 'subject', quizz.subject, 'lastsend', quizz.lastsend, 'nextsend', quizz.nextsend);
+    
+    for(var i = 0; i < quizz.questions.length; i++)
+    {
+        questionUtils.setQuestion(key, i, quizz.questions[i], client, res);
+    }
+
+    res.status(200); 
+    res.send(id.toString());
+}
+
 function callbackKey(err, keys) {
     if (err)
     {
@@ -23,15 +35,7 @@ function callbackKey(err, keys) {
     }
     max++;
     testKey = quizzG.username + "_" + "Quizz" + max;
-    clientG.hmset(testKey,'id',max ,'nbsuccess', 0, 'nbtry', 0, 'title', quizzG.title, 'info', quizzG.info, 'seuil', quizzG.seuil, 'creation', quizzG.creation, 'lastmodif', quizzG.lastmodif, 'subject', quizzG.subject, 'lastsend', quizzG.lastsend, 'nextsend', quizzG.nextsend);
-    
-    for(var i = 0; i < quizzG.questions.length; i++)
-    {
-        questionUtils.setQuestion(testKey, i, quizzG.questions[i], clientG, resG);
-    }
-    
-    resG.status(200); 
-    resG.send(max.toString());
+    saveQuizz(testKey, max, quizzG, clientG, resG);
 }
 
 var setQuizz = function (quizz, client, res) {
@@ -51,9 +55,8 @@ var incrementQuizz = function (key, success, client, res) {
             }
 		}
     });
-    
 }
 
-
 exports.setQuizz = setQuizz;
+exports.saveQuizz = saveQuizz;
 exports.incrementQuizz = incrementQuizz;

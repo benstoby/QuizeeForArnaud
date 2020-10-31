@@ -80,6 +80,10 @@ function handleaddR(element, answer, isgood) {
         nbReponse = 0;
     }
     nbReponse++;
+    if(typeof isgood == 'undefined')
+    {
+        var isgood = 'false';
+    }
 
     var stringhtml = '  <div class="Q rep"> \
                             <textarea name="R' + idQuestion + '_' + nbReponse + '" oninput="textAreaAdjust(this)" style="overflow:hidden">';
