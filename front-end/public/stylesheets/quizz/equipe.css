@@ -33,8 +33,9 @@
     color: black;
     border-radius: 18px;
     resize: none;
-    height: 160px;
+    height: 122px;
     margin-right: -30%;
+    text-align: center;
   }
 
   .bodysize

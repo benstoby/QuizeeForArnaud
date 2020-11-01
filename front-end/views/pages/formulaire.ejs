@@ -8,7 +8,7 @@
 </head>
 
 <body class="center bodysize">
-    
+
     <form id="form" method="POST" action="/users/signin" class="column spacearound formsize">
         <section class="textformulaire">
             <article class="infos_globale column">
@@ -21,7 +21,7 @@
                 <div>
                     <input type="text" id="firstname" name="firstname" placeholder="Prenom*" style="border: hidden">
                 </div>
-               
+
                 <div>
                     <input type="email" id="email" name="email" placeholder="email*" style="border: hidden">
                 </div>
@@ -40,22 +40,28 @@
                     <input type="text" id="country" name="country" placeholder="Pays*" style="border: hidden">
                 </div>
                 <div>
+
                     <input type="password" id="password" name="password" placeholder="Mot de passe*"
                         style="border: hidden">
                 </div>
                 <div>
                     <input type="password" id="password" name="password" placeholder="Mot de passe*"
                         style="border: hidden">
+                    <p>Type de mot de passe : <br>
+                        - min longueur = 8 <br>
+                        - minuscules et nombre <br>
+                        - pas d'espace <br>
+                        - pas de suite de chiffre</p>
                 </div>
             </article>
         </section>
         <article class="column">
             <div class="espace1">
-                <input type="checkbox" id="cgu"/>
+                <input type="checkbox" id="cgu" />
                 <label>J'accepte les conditions d'utilisation</label>
             </div>
             <div class="espace1">
-                <input type="checkbox" id="confi"/>
+                <input type="checkbox" id="confi" />
                 <label>J'ai pris connaissance de la politique de<br>protection des donnees personnelles</label>
             </div>
         </article>
@@ -65,7 +71,7 @@
             </button>
         </article>
         <% if(somethingNotValid) { %>
-            <p class="error"> erreur champ(s) invalide(s) </p>
+        <p class="error"> erreur champ(s) invalide(s) </p>
         <% } %>
         <p id="check_error" class="error hide"> merci d'accepter les regles d'utilisations et de confidentialitees</p>
     </form>
