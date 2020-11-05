@@ -17,7 +17,14 @@ var client = redis.createClient(); //creates a new client
 
 var ioRedis = new IoRedis();
 
-client.on('connect', function () {
+var client = redis.createClient(35221, 'sb249585-001.dbaas.ovh.net', {no_ready_check: true});
+client.auth('pass', function (err) {
+    if (err) console.error(err);
+});
+
+client.on('connect', function (error) {
+    if(error)
+        console.error(error);
     console.log('connected');
 });
 
